@@ -3,6 +3,7 @@ MAINTAINER Matt Ho
 
 ENV ATC_TEMPLATES /opt/concourse/web/templates
 ENV ATC_PUBLIC    /opt/concourse/web/public
+ENV ATC_ATC       /opt/concourse/bin/atc
 
 EXPOSE 8080
 
