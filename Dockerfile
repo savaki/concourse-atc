@@ -1,4 +1,4 @@
-FROM busybox
+FROM ubuntu:14.04
 MAINTAINER Matt Ho
 
 ENV ATC_TEMPLATES /opt/concourse/web/templates
