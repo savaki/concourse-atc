@@ -32,7 +32,7 @@ end
 namespace :docker do
   desc 'builds the docker image'
   task :build do
-    run_command "docker build -t savaki/concourse-atc:0.1#{version} ."
+    run_command "docker build -t savaki/concourse-atc:#{version} ."
   end
 
   desc 'pushes the docker image'
