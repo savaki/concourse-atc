@@ -7,3 +7,4 @@
 # ignore generated files
 /cmd/atcd/atcd
 /target
+/atc
