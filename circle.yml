@@ -9,6 +9,9 @@ machine:
 dependencies:
   override:
     - bundle install
+
+test:
+  override:
     - bundle exec rake ci:build
 
 deployment:
