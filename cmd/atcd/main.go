@@ -10,6 +10,7 @@ import (
 )
 
 var flags = []cli.Flag{
+	cli.BoolFlag{"dev", "dev mode; lax security", "ATC_DEV"},
 	cli.StringFlag{"callbacksURL", "http://127.0.0.1:8080", "URL used for callbacks to reach the ATCD (excluding basic auth)", "ATC_CALLBACK_URL"},
 	cli.StringFlag{"checkInterval", "1m0s", "interval on which to poll for new versions of resources", "ATC_CHECK_INTERVAL"},
 	cli.StringFlag{"httpUsername", "", "basic auth username for the server", "ATC_USERNAME"},
@@ -37,6 +38,8 @@ func Run(c *cli.Context) {
 		case cli.StringFlag:
 			name = v.Name
 		case cli.IntFlag:
+			name = v.Name
+		case cli.BoolFlag:
 			name = v.Name
 		}
 		if name == "atc" {
