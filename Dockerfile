@@ -10,4 +10,4 @@ EXPOSE 8080
 ADD target/bin /opt/concourse/bin
 ADD target/web /opt/concourse/web
 
-CMD [ "/opt/concourse/bin/atcd" ]
+CMD [ "/opt/concourse/bin/atcd", "start" ]
