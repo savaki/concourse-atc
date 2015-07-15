@@ -19,14 +19,14 @@ var atcFlags = []cli.Flag{
 	cli.BoolFlag{"dev", "dev mode; lax security", "ATC_DEV"},
 	cli.StringFlag{"callbacksURL", "http://127.0.0.1:8080", "URL used for callbacks to reach the ATCD (excluding basic auth)", "ATC_CALLBACK_URL"},
 	cli.StringFlag{"checkInterval", "1m0s", "interval on which to poll for new versions of resources", "ATC_CHECK_INTERVAL"},
-	cli.StringFlag{"-cliDownloadsDir", "", "directory containing CLI binaries to serve", "ATC_CLI_DOWNLOADS_DIR"},
+	cli.StringFlag{"cliDownloadsDir", "", "directory containing CLI binaries to serve", "ATC_CLI_DOWNLOADS_DIR"},
 	cli.StringFlag{"httpUsername", "", "basic auth username for the server", "ATC_USERNAME"},
 	cli.StringFlag{"httpPassword", "", "basic auth password for the server", "ATC_PASSWORD"},
 	cli.StringFlag{"sqlDataSource", "postgres://127.0.0.1:5432/atc?sslmode=disable", "database/sql data source configuration string", ENV_SQL_DATASOURCE},
 	cli.StringFlag{"sqlDriver", "postgres", "database/sql driver name", ENV_SQL_DRIVER},
 	cli.StringFlag{"public", "web/public", "path to directory containing public resources (javascript, css, etc.)", "ATC_PUBLIC"},
 	cli.StringFlag{"templates", "web/templates", "path to directory containing the html templates", "ATC_TEMPLATES"},
-	cli.IntFlag{"webListenPort", 8080, "port for the web server to listen on", "ATC_PORT"},
+	cli.IntFlag{"webListenPort", 8080, "port for the web server to listen on", "PORT"},
 }
 
 func main() {
