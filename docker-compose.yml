@@ -1,14 +1,14 @@
 atc:
   image: savaki/concourse-atc:latest
   environment:
-  - ATC_DEV=true
+    - ATC_DEV=true
   ports:
-   - "8080:8080"
+    - "8080:8080"
   links:
-   - atcdb:db
+    - atcdb:db
 
 atcdb:
   image: postgres:9.4
   environment:
-  - POSTGRES_USER=atc
-  - POSTGRES_PASSWORD=password
+    - POSTGRES_USER=atc
+    - POSTGRES_PASSWORD=password

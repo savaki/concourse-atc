@@ -15,12 +15,22 @@ end
 
 desc 'prepare distribution'
 task :dist => %w(go:build) do
+  # download fly
+  %w(darwin windows linux).each do |platform|
+    filename = "target/downloads/#{platform}/amd64/fly"
+    run_command "mkdir -p #{File.dirname filename}"
+    run_command "curl -o #{filename} http://ci.concourse.ci/downloads/#{platform}/amd64/fly"
+    run_command "chmod +x #{filename}"
+  end
+
+  # build atc
   run_command 'go get github.com/concourse/atc/cmd/atc'
   run_command 'go build -o target/bin/atc github.com/concourse/atc/cmd/atc'
   run_command 'chmod +x target/bin/atc'
 
-  run_command 'git clone https://github.com/concourse/atc'
-  run_command 'cp -R -P atc/web target/web'
+  # copy atc assets
+  run_command 'git clone https://github.com/concourse/atc target/atc'
+  run_command 'cp -R -P target/atc/web target/web'
 end
 
 namespace :go do
